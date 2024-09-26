@@ -1,34 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="result" disabled>
-        <div class="buttons">
-            <button class="operator" onclick="clearResult()">C</button>
-            <button class="operator" onclick="deleteLastChar()">CE</button>
-            <button class="operator" onclick="calculate('%')">%</button>
-            <button class="operator" onclick="calculate('/')">/</button>
-            <button onclick="appendToResult('7')">7</button>
-            <button onclick="appendToResult('8')">8</button>
-            <button onclick="appendToResult('9')">9</button>
-            <button class="operator" onclick="calculate('*')">x</button>
-            <button onclick="appendToResult('4')">4</button>
-            <button onclick="appendToResult('5')">5</button>
-            <button onclick="appendToResult('6')">6</button>
-            <button class="operator" onclick="calculate('-')">-</button>
-            <button onclick="appendToResult('1')">1</button>
-            <button onclick="appendToResult('2')">2</button>
-            <button onclick="appendToResult('3')">3</button>
-            <button class="operator" onclick="calculate('+')">+</button>
-            <button onclick="appendToResult('0')">0</button>
-            <button onclick="appendToResult('.')">.</button>
-            <button class="equal" onclick="calculate('=')">=</button>
-        </div>
+    <nav>
+       <h1>Currency Converter</h1>
+    </nav>
+    <div class="card">
+        <h2>Enter Amount and Currency</h2>
+        <form action="/action.php" method="get">
+          <label for="quantity">Enter Amount:</label>
+          <input type="number" id="amount" name="quantity" required>
+      
+          <label for="currency">Select Currency:</label>
+          <select id="currency" name="currency" required>
+            <option value="USD">USD - United States Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="INR">Indian Rupees</option>
+            <!-- Add more currency options as needed -->
+          </select>
+      
+          <input class="btn" type="submit" value="Submit">
+        </form>
+      </div>
+      <div class="output">
+        <h2>Result</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Currency</th>
+                    <th>Code</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+        </table>
     </div>
-    <script src="script.js"></script>
+      <script src="script.js"></script>
 </body>
 </html>
